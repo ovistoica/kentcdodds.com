@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {css} from '@emotion/react'
 import theme from 'prism-react-renderer/themes/nightOwl'
-import {bpDesktopOnly} from '../../lib/breakpoints'
+import {bpDesktopOnly} from 'lib/breakpoints'
 import Highlight, {defaultProps} from 'prism-react-renderer'
 
 const RE = /{([\d,-]+)}/

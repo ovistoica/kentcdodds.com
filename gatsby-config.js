@@ -37,9 +37,9 @@ module.exports = {
     twitterHandle: config.twitterHandle,
     description: config.siteDescription,
     keywords: [
-      'Software Engineer',
-      'React Training',
-      'Testing JavaScript Training',
+      'Solo Founder',
+      'Design Feedback',
+      'Romanian Entrepreneur',
     ],
     canonicalUrl: siteUrl,
     image: config.siteLogo,
@@ -70,20 +70,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/writing-blog`,
         name: 'writing-blog',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/workshops`,
-        name: 'workshops',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/podcast`,
-        name: 'podcast',
       },
     },
     {
@@ -188,13 +174,13 @@ module.exports = {
             filePathRegex: `//content/blog//`,
             blogUrl: 'https://kentcdodds.com/blog',
             output: '/blog/rss.xml',
-            title: 'Kent C. Dodds Blog RSS Feed',
+            title: 'Stoica Ovidiu Blog RSS Feed',
           }),
           getBlogFeed({
             filePathRegex: `//content/writing-blog//`,
             blogUrl: 'https://kentcdodds.com/writing/blog',
             output: '/writing/blog/rss.xml',
-            title: `Kent's Writing Blog RSS Feed`,
+            title: `Stoica Ovidiu Writing Blog RSS Feed`,
           }),
         ],
       },

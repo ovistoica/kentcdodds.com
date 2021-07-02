@@ -137,23 +137,6 @@ const createPages = async ({actions, graphql}) => {
       }
     }
     query {
-      podcast: allMdx(
-        filter: {fileAbsolutePath: {regex: "//content/podcast//"}}
-      ) {
-        edges {
-          node {
-            fileAbsolutePath
-            frontmatter {
-              simpleCastId
-              season
-            }
-            fields {
-              title
-              slug
-            }
-          }
-        }
-      }
       blog: allMdx(
         filter: {
           frontmatter: {published: {ne: false}}
@@ -180,19 +163,6 @@ const createPages = async ({actions, graphql}) => {
           }
         }
       }
-      workshops: allMdx(
-        filter: {
-          frontmatter: {published: {ne: false}}
-          fileAbsolutePath: {regex: "//content/workshops//"}
-        }
-        sort: {order: DESC, fields: [frontmatter___date]}
-      ) {
-        edges {
-          node {
-            ...PostDetails
-          }
-        }
-      }
     }
   `)
 
@@ -200,13 +170,7 @@ const createPages = async ({actions, graphql}) => {
     return Promise.reject(errors)
   }
 
-  const {blog, writing, workshops, podcast} = data
-
-  createPodcastPages({
-    podcastPath: '',
-    data: podcast,
-    actions,
-  })
+  const {blog, writing } = data
 
   createBlogPages({
     blogPath: '/blog',
@@ -216,10 +180,6 @@ const createPages = async ({actions, graphql}) => {
   createBlogPages({
     blogPath: '/writing/blog',
     data: writing,
-    actions,
-  })
-  createWorkshopPages({
-    data: workshops,
     actions,
   })
 }

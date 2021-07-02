@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {css} from '@emotion/react'
 import theme from '../../config/theme'
-import {bpMaxMD, bpMaxSM} from '../lib/breakpoints'
-import {rhythm, fonts} from '../lib/typography'
+import {bpMaxMD, bpMaxSM} from 'lib/breakpoints'
+import {rhythm, fonts} from 'lib/typography'
 import Markdown from 'react-markdown'
 import Container from 'components/container'
 
